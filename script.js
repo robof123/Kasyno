@@ -68,7 +68,7 @@ function getRandomSymbol() {
 function checkResult(slot1, slot2, slot3, betAmount) {
     // Zasady wygranej: wszystkie sloty muszą być takie same
     if (slot1 === slot2 && slot2 === slot3) {
-        const winnings = betAmount * 5; // Wycena wygranej
+        const winnings = betAmount * 100; // Wycena wygranej
         balance += winnings; // Dodajemy wygraną do salda
         resultDisplay.textContent = `Gratulacje! Wygrałeś: ${winnings}!`;
     } else {
@@ -79,4 +79,17 @@ function checkResult(slot1, slot2, slot3, betAmount) {
 
 function updateBalanceDisplay() {
     balanceDisplay.textContent = `Saldo: ${balance}`;
+}
+
+//Formularz z Hasłem
+function checkPassword() {
+    const password = document.getElementById("password").value;
+    const correctPassword = "mojehaslo"; // Tutaj wpisz swoje hasło
+    const errorMessage = document.getElementById("error-message");
+
+    if (password === correctPassword) {
+        window.location.href = "https://example.com"; // Wpisz tutaj adres strony docelowej // Do edycji w GH
+    } else {
+        errorMessage.textContent = "Nieprawidłowe hasło. Spróbuj ponownie.";
+    }
 }
