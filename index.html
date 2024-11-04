@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kasyno - Automaty</title>
+    <title>🎰Kasyno - Automaty🎰</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Kasyno - Automaty</h1>
+        <h1>🎰Kasyno - Automaty🎰</h1>
         <div class="balance" id="balance">Saldo: 100</div>
         <input type="number" id="deposit-input" placeholder="Kwota wpłaty" min="1" />
         <button class="button" id="deposit-button">Wpłać</button>
@@ -22,6 +22,12 @@
         </div>
         <button class="button2" id="spin-button">Obracaj!</button>
         <div class="result" id="result"></div>
+    </div>
+    <div class="pole">
+        <h5>Wprowadź hasło, aby przejść dalej</h5>
+        <input type="password" id="password" class="wpis" placeholder="Wpisz hasło">
+        <button class="button3" onclick="checkPassword()">Zaloguj się</button>
+        <p id="error-message"></p>
     </div>
     <script src="script.js"></script>
 </body>
