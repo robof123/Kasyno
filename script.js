@@ -36,7 +36,7 @@ spinButton.addEventListener('click', () => {
 
     const slots = document.querySelectorAll('.slot');
     const spinDuration = 1500; // Czas trwania animacji losowania
-    const intervalDuration = 10; // Czas między zmianami emotek
+    const intervalDuration = 100; // Czas między zmianami emotek
 
     slots.forEach(slot => {
         slot.classList.add('spinning'); // Dodajemy klasę animacji
