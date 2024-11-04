@@ -88,7 +88,7 @@ function checkPassword() {
     const errorMessage = document.getElementById("error-message");
 
     if (password === correctPassword) {
-        window.location.href = "https://example.com"; // Wpisz tutaj adres strony docelowej // Do edycji w GH
+        window.location.href = "https://robof123.github.io/Kasyno/success.htmlm"; // Wpisz tutaj adres strony docelowej // Do edycji w GH
     } else {
         errorMessage.textContent = "Nieprawidłowe hasło. Spróbuj ponownie.";
     }
