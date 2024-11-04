@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6b0f8a, #ff5e62);
+    position: relative;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 450px;
+    position: relative;
+    z-index: 1; /* Ustaw priorytet, aby kontener był nad tłem */
+}
+
+.balance {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.slot {
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    border: 2px solid #333;
+    font-size: 2em;
+    line-height: 100px;
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.5s;
+}
+
+.spinning {
+    animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotateY(0); }
+    100% { transform: rotateY(360deg); }
+}
+
+input[type="number"] {
+    font-size: 1em;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: calc(100% - 22px);
+}
+
+.button {
+	box-shadow:inset 0px 1px 0px 0px #fbafe3;
+	background:linear-gradient(to bottom, #ff5bb0 5%, #ef027d 100%);
+	background-color:#ff5bb0;
+	border-radius:6px;
+	border:1px solid #ee1eb5;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #c70067;
+    margin-bottom: 10px;
+    
+}
+.button:hover {
+	background:linear-gradient(to bottom, #ef027d 5%, #ff5bb0 100%);
+	background-color:#ef027d;
+}
+.button:active {
+	position:relative;
+	top:1px;
+}
+
+.button2 {
+	box-shadow:inset 0px 1px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+    margin-bottom: 10px;
+}
+.button2:hover {
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+}
+.button2:active {
+	position:relative;
+	top:1px;
+}
+
