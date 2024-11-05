@@ -7,6 +7,17 @@ const betInput = document.getElementById('bet-input');
 const depositInput = document.getElementById('deposit-input');
 
 let balance = 100; // Początkowe saldo
+let winProbability = 100; // Procent szans na wygraną (domyślnie 50%)
+
+
+// Ustawienie prawdopodobieństwa wygranej przez programistę
+function setWinProbability(probability) {
+    if (probability >= 0 && probability <= 100) {
+        winProbability = probability;
+    } else {
+        console.error("Procent musi być w zakresie 0-100.");
+    }
+}
 
 // Obsługa wpłaty
 depositButton.addEventListener('click', () => {
@@ -68,9 +79,14 @@ function getRandomSymbol() {
 function checkResult(slot1, slot2, slot3, betAmount) {
     // Zasady wygranej: wszystkie sloty muszą być takie same
     if (slot1 === slot2 && slot2 === slot3) {
-        const winnings = betAmount * 100; // Wycena wygranej
-        balance += winnings; // Dodajemy wygraną do salda
-        resultDisplay.textContent = `Gratulacje! Wygrałeś: ${winnings}!`;
+        // Sprawdzamy, czy wygrana się zdarzyła na podstawie ustawionego prawdopodobieństwa
+        if (Math.random() * 100 < winProbability) {
+            const winnings = betAmount * 100; // Wycena wygranej
+            balance += winnings; // Dodajemy wygraną do salda
+            resultDisplay.textContent = `Gratulacje! Wygrałeś: ${winnings}!`;
+        } else {
+            resultDisplay.textContent = 'Niestety, nie wygrałeś! Spróbuj ponownie.';
+        }
     } else {
         resultDisplay.textContent = 'Spróbuj ponownie!';
     }
@@ -81,8 +97,7 @@ function updateBalanceDisplay() {
     balanceDisplay.textContent = `Saldo: ${balance}`;
 }
 
-
-//Formularz z Hasłem
+// Formularz z Hasłem
 function checkPassword() {
     const password = document.getElementById("password").value;
     const correctPassword = "mojehaslo"; // Wpisz swoje hasło
@@ -97,3 +112,4 @@ function checkPassword() {
         errorMessage.textContent = "Nieprawidłowe hasło. Spróbuj ponownie.";
     }
 }
+
